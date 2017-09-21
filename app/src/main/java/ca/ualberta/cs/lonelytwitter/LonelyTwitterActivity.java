@@ -18,6 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class LonelyTwitterActivity extends Activity {
 
@@ -38,6 +39,9 @@ public class LonelyTwitterActivity extends Activity {
 		saveButton.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
+
+				Toast.makeText(LonelyTwitterActivity.this, "Saved", Toast.LENGTH_LONG).show();
+
 
 				Tweet tweet = new ImportantTweet("");
 				NormalTweet tweet1 = new NormalTweet("");
@@ -109,7 +113,7 @@ public class LonelyTwitterActivity extends Activity {
 		try {
 			FileOutputStream fos = openFileOutput(FILENAME,
 					Context.MODE_APPEND);
-			fos.write(new String(date.toString() + " | " + text)
+			fos.write(new String(date.toString() + " |\n " + text)
 					.getBytes());
 			fos.close();
 		} catch (FileNotFoundException e) {
