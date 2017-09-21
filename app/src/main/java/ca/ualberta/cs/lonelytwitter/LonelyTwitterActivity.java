@@ -25,7 +25,9 @@ public class LonelyTwitterActivity extends Activity {
 	private static final String FILENAME = "file.sav";
 	private EditText bodyText;
 	private ListView oldTweetsList;
-	
+	//private ArrayList<String> list = new ArrayList<String>();
+	//ArrayAdapter adapter;
+
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -35,7 +37,7 @@ public class LonelyTwitterActivity extends Activity {
 		bodyText = (EditText) findViewById(R.id.body);
 		Button saveButton = (Button) findViewById(R.id.save);
 		oldTweetsList = (ListView) findViewById(R.id.oldTweetsList);
-
+		//adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, list);
 		saveButton.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
