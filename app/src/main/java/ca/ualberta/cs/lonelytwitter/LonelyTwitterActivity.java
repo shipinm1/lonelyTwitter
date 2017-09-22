@@ -92,8 +92,7 @@ public class LonelyTwitterActivity extends Activity {
 
 		clearButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-
-				//Toast.makeText(LonelyTwitterActivity.this, "Saved", Toast.LENGTH_LONG).show();
+				Toast.makeText(LonelyTwitterActivity.this, "Cleared", Toast.LENGTH_LONG).show();
 
 				setResult(RESULT_OK);
 				String text = bodyText.getText().toString();
