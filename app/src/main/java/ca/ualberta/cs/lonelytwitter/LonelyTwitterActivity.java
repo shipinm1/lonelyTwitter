@@ -45,9 +45,10 @@ public class LonelyTwitterActivity extends Activity {
 		bodyText = (EditText) findViewById(R.id.body);
 		Button saveButton = (Button) findViewById(R.id.save);
 		oldTweetsList = (ListView) findViewById(R.id.oldTweetsList);
+		Button clearButton = (Button) findViewById(R.id.clear);
 		//adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, list);
-		saveButton.setOnClickListener(new View.OnClickListener() {
 
+		saveButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				//Toast toast = new Toast();
 				Toast.makeText(LonelyTwitterActivity.this, "Saved", Toast.LENGTH_LONG).show();
@@ -87,7 +88,27 @@ public class LonelyTwitterActivity extends Activity {
 
 			}
 		});
+
+
+		clearButton.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+
+				//Toast.makeText(LonelyTwitterActivity.this, "Saved", Toast.LENGTH_LONG).show();
+
+				setResult(RESULT_OK);
+				String text = bodyText.getText().toString();
+				tweets.clear();
+
+				//tweets.add(new NormalTweet(text));
+				adapter.notifyDataSetChanged();
+				saveInFile();
+
+
+
+			}
+		});
 	}
+
 
 	@Override
 	protected void onStart() {
