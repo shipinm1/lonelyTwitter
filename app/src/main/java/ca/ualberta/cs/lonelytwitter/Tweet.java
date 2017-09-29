@@ -1,9 +1,30 @@
+/*
+ * Copyright (c) Team X. University of Alberta.
+ */
+/**
+ * Tweet
+ *
+ * Version 1.0
+ *
+ * September 28 2017
+ *
+ * Copyright (c) Team x, CMPUT 301, University of Alberta.
+ */
+
+
 package ca.ualberta.cs.lonelytwitter;
 
 import java.util.Date;
 
 /**
- * Created by watts1 on 9/12/17.
+ * Represents a Tweet
+ *
+ * @author shipin
+ * @version 1.0
+ * @see NormalTweet
+ * @see ImportantTweet
+ * @since 1.0
+ *
  */
 
 public abstract class Tweet {
@@ -16,6 +37,13 @@ public abstract class Tweet {
         this.date = new Date();
     }
 
+    /**
+     * Constructs Tweet object
+     *
+     * @param message tweet message
+     * @param date tweet date
+     */
+
     public Tweet(String message, Date date) {
         this.message = message;
         this.date = date;
@@ -23,7 +51,12 @@ public abstract class Tweet {
 
     public abstract Boolean isImportant();
 
-
+    /**
+     * Sets tweet messages
+     *
+     * @param message Tweet message
+     * @throws TweetTooLongException
+     */
 
 
 

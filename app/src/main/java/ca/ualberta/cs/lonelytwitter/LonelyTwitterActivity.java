@@ -1,3 +1,15 @@
+/*
+ * Copyright (c) Team X. University of Alberta.
+ */
+/**
+ * LonelyTwitterActivity
+ *
+ * Version 1.0
+ *
+ * September 28 2017
+ *
+ * Copyright (c) Team x, CMPUT 301, University of Alberta.
+ */
 package ca.ualberta.cs.lonelytwitter;
 
 import java.io.BufferedReader;
@@ -25,6 +37,15 @@ import android.widget.ListView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+/**
+ * Main Activity of The App
+ *
+ * @author shipin
+ * @version 1.0
+ * @since 1.0
+ *
+ */
+
 public class LonelyTwitterActivity extends Activity {
 
 	private static final String FILENAME = "file.sav";
@@ -33,8 +54,13 @@ public class LonelyTwitterActivity extends Activity {
 
 	private ArrayList<Tweet> tweetList;
 	private ArrayAdapter<Tweet> adapter;
-	
-	/** Called when the activity is first created. */
+
+
+	/**
+	 * Activity when app lunched
+	 *
+	 * @param savedInstanceState
+	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -63,6 +89,10 @@ public class LonelyTwitterActivity extends Activity {
 		});
 	}
 
+	/**
+	 * Activiy when Start up
+	 *
+	 */
 	@Override
 	protected void onStart() {
 		// TODO Auto-generated method stub
@@ -73,9 +103,13 @@ public class LonelyTwitterActivity extends Activity {
 		oldTweetsList.setAdapter(adapter);
 	}
 
+	/**
+	 * load serialized file from local
+	 *
+	 */
 	private void loadFromFile() {
 		try {
-			FileInputStream fis = openFileInput(FILENAME);
+			FileInputStream fis = openFileInput(	FILENAME);
 			BufferedReader in = new BufferedReader(new InputStreamReader(fis));
 
 			Gson gson = new Gson();
@@ -94,7 +128,11 @@ public class LonelyTwitterActivity extends Activity {
 		}
 
 	}
-	
+
+	/**
+	 * Serialize current changes and save in local file.
+	 *
+	 */
 	private void saveInFile() {
 		try {
 			FileOutputStream fos = openFileOutput(FILENAME,
